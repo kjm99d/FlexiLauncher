@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlexiLauncher", "FlexiLauncher\FlexiLauncher.vcxproj", "{67EA502D-A0D9-4738-AE42-3167F4A1207E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlexiUpdater", "FlexiUpdater\FlexiUpdater.vcxproj", "{9A0477AD-468D-4A08-A940-F4EBEF286B7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "솔루션 항목", "솔루션 항목", "{6D667B21-AD39-469A-B150-9BCE07484F48}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Debug|x64.ActiveCfg = Debug|x64
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Debug|x64.Build.0 = Debug|x64
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Debug|x86.ActiveCfg = Debug|Win32
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Debug|x86.Build.0 = Debug|Win32
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Release|x64.ActiveCfg = Release|x64
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Release|x64.Build.0 = Release|x64
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Release|x86.ActiveCfg = Release|Win32
+		{67EA502D-A0D9-4738-AE42-3167F4A1207E}.Release|x86.Build.0 = Release|Win32
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Debug|x64.ActiveCfg = Debug|x64
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Debug|x64.Build.0 = Debug|x64
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Debug|x86.ActiveCfg = Debug|Win32
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Debug|x86.Build.0 = Debug|Win32
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Release|x64.ActiveCfg = Release|x64
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Release|x64.Build.0 = Release|x64
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Release|x86.ActiveCfg = Release|Win32
+		{9A0477AD-468D-4A08-A940-F4EBEF286B7B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52819EAB-5875-4575-817E-66D1DD27D4D1}
+	EndGlobalSection
+EndGlobal
