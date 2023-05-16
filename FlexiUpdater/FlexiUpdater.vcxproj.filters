@@ -13,18 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\interface">
+      <UniqueIdentifier>{4358f0bc-68b7-4a48-8ee6-fc80ae02a223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\interface">
+      <UniqueIdentifier>{0f21f5f3-154d-4954-8194-54a56476743f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공통 헤더 파일">
+      <UniqueIdentifier>{3e6e1993-6d3f-45ce-9fa9-af91b447e69d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공통 소스 파일">
+      <UniqueIdentifier>{76198c90-19bf-4127-9c9d-0c7a35cd8c86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FlexiUpdater.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="UpdaterHTTP.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="IUpdater.cpp">
+      <Filter>소스 파일\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LauncherCtrl.cpp">
+      <Filter>공통 소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FlexiUpdater.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdaterHTTP.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdater.h">
+      <Filter>헤더 파일\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FlexiLauncherType.h">
+      <Filter>공통 헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LauncherCtrl.h">
+      <Filter>공통 헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
