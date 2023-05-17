@@ -1,3 +1,6 @@
 [submodule "lib/FlexiPlugpp"]
 	path = lib/FlexiPlugpp
 	url = https://github.com/kjm99d/FlexiPlugpp
+[submodule "lib/SrvLib"]
+	path = lib/SrvLib
+	url = https://github.com/kjm99d/SrvLib
