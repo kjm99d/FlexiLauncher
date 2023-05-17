@@ -9,7 +9,19 @@
 
 int main()
 {
-	PlugCoreCtrl.Link(LINK_ID::Updater::UPDATER_PROGRAM_INIT);
+    PlugCoreCtrl.Link(LINK_ID::Updater::UPDATER_PROGRAM_INIT);
+    PlugCoreCtrl.Link(LINK_ID::Command::COMMAND_SHOW_LOGIN);
+
+//    LoadLibraryA("Project11.dll");
+	
+    
+    // 메시지 루프
+    MSG msg;
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
