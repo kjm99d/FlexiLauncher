@@ -74,27 +74,27 @@
     <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
     <LibraryPath>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\SrvLib\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\WinSysIPC;$(SolutionDir)lib\SrvLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
     <LibraryPath>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\SrvLib\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\WinSysIPC;$(SolutionDir)lib\SrvLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
     <TargetName>$(ProjectName)x64</TargetName>
     <LibraryPath>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\SrvLib\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\WinSysIPC;$(SolutionDir)lib\SrvLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\$(PlatformTarget)\</IntDir>
     <TargetName>$(ProjectName)x64</TargetName>
     <LibraryPath>$(SolutionDir)bin\$(PlatformTarget)\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\SrvLib\;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Common;$(SolutionDir)lib\FlexiPlugpp\FlexiPlugCore;$(SolutionDir)lib\WinSysIPC;$(SolutionDir)lib\SrvLib;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

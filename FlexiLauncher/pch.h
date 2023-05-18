@@ -9,7 +9,17 @@
 
 // 여기에 미리 컴파일하려는 헤더 추가
 #include <Windows.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <thread>
 
+#include "IPCAPI.h"
+#if _WIN64
+#pragma comment(lib, "WinSysIPCx64.lib")
+#else
+#pragma comment(lib, "WinSysIPC.lib")
+#endif
 
 #include "FlexiPlugCore_API.h"
 #include "CommonLinkID.h"
