@@ -4,3 +4,6 @@
 [submodule "lib/SrvLib"]
 	path = lib/SrvLib
 	url = https://github.com/kjm99d/SrvLib
+[submodule "lib/WinSysIPC"]
+	path = lib/WinSysIPC
+	url = https://github.com/WinSysUtil/WinSysIPC
