@@ -20,7 +20,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlexiPlugCore", "lib\FlexiP
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlexiPlug_Login", "FlexiPlug_Login\FlexiPlug_Login.vcxproj", "{741FDF5C-4CCB-4E36-921D-EBB0DCD168EB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinSysIPC", "..\WinSysIPC\WinSysIPC.vcxproj", "{BAF624D1-72AC-4B9A-B5FE-87F0FCFA422C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinSysIPC", "lib\WinSysIPC\WinSysIPC.vcxproj", "{BAF624D1-72AC-4B9A-B5FE-87F0FCFA422C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
