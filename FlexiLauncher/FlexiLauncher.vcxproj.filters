@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\lib">
+      <UniqueIdentifier>{0935e7d7-3e6e-465c-bb47-ea55361592f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\lib\SrvLib">
+      <UniqueIdentifier>{884728bd-f8ef-4aaa-8274-6629db435582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\lib">
+      <UniqueIdentifier>{6936cd81-e215-4b8f-8903-5aabea9e8fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\lib\SrvLib">
+      <UniqueIdentifier>{e01acc28-1a19-4d5a-8ca4-57dcadf96a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공통 소스 파일">
+      <UniqueIdentifier>{fff20478-49a3-4ed4-909b-ca3a30392944}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공통 헤더 파일">
+      <UniqueIdentifier>{b2ce8702-04b5-4690-9908-f695c8c53640}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FlexiLauncher.cpp">
@@ -21,10 +39,37 @@
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\lib\SrvLib\BaseSrv.cpp">
+      <Filter>소스 파일\lib\SrvLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\SrvLib\ServMain.cpp">
+      <Filter>소스 파일\lib\SrvLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\SrvLib\SrvCtrl.cpp">
+      <Filter>소스 파일\lib\SrvLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\PlugCoreCtrl.cpp">
+      <Filter>공통 소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\SrvLib\BaseSrv.h">
+      <Filter>헤더 파일\lib\SrvLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\SrvLib\Service.h">
+      <Filter>헤더 파일\lib\SrvLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\SrvLib\SrvCtrl.h">
+      <Filter>헤더 파일\lib\SrvLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PlugCoreCtrl.h">
+      <Filter>공통 헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CommonLinkID.h">
+      <Filter>공통 헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

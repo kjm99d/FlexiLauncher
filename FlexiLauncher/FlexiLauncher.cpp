@@ -1,21 +1,80 @@
-﻿// FlexiLauncher.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
+/* Copyright (C) 2016-2020 Thomas Hauck - All Rights Reserved.
 
+   Distributed under MIT license.
+   See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
+
+   The author would be happy if changes and
+   improvements were reported back to him.
+
+   Author:  Thomas Hauck
+   Email:   Thomas@fam-hauck.de
+*/
 #include "pch.h"
-#include <iostream>
 
-int main()
+#include <string>
+#if defined(_WIN32) || defined(_WIN64)
+#include <Windows.h>
+#else
+#include <codecvt>
+#include <locale>
+#include <syslog.h>
+#include <unistd.h>
+#endif
+
+#include "Service.h"
+
+constexpr const WCHAR* STR_SERVICE_DISPLAY_NAME = L"FlexiLauncher Service";
+constexpr const WCHAR* STR_SERVICE_DESCRIPTION  = L"FlexiLauncher Service";
+constexpr const WCHAR* STR_SERVICE_SERVICE_NAME = L"FlexiLauncherSrv";
+
+
+int main(int argc, const char* argv[])
 {
-    std::cout << "Hello World!\n";
+    SrvParam svParam;
+#if defined(_WIN32) || defined(_WIN64)
+    svParam.szDspName = STR_SERVICE_DISPLAY_NAME;                 // Servicename in Service control manager of windows
+    svParam.szDescribe = STR_SERVICE_DESCRIPTION;   // Description in Service control manager of windows
+#endif
+    svParam.szSrvName = STR_SERVICE_SERVICE_NAME;                      // Service name (service id)
+
+    std::wstring m_strModulePath;
+
+    svParam.fnStartCallBack = [&m_strModulePath]()
+    {
+        m_strModulePath = std::wstring(FILENAME_MAX, 0);
+#if defined(_WIN32) || defined(_WIN64)
+        if (GetModuleFileName(nullptr, &m_strModulePath[0], FILENAME_MAX) > 0)
+            m_strModulePath.erase(m_strModulePath.find_last_of(L'\\') + 1); // Sollte der Backslash nicht gefunden werden wird der ganz String gelöscht
+
+        if (_wchdir(m_strModulePath.c_str()) != 0)
+            m_strModulePath = L"./";
+#else
+        std::string strTmpPath(FILENAME_MAX, 0);
+        if (readlink(std::string("/proc/" + std::to_string(getpid()) + "/exe").c_str(), &strTmpPath[0], FILENAME_MAX) > 0)
+            strTmpPath.erase(strTmpPath.find_last_of('/'));
+
+        //Change Directory
+        //If we cant find the directory we exit with failure.
+        if ((chdir(strTmpPath.c_str())) < 0) // if ((chdir("/")) < 0)
+            strTmpPath = ".";
+        m_strModulePath = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(strTmpPath) + L"/";
+#endif
+        PlugCoreCtrl.Link(LINK_ID::Launcher::LAUNCHER_PROGRAM_INIT);
+
+    };
+    svParam.fnStopCallBack = []() noexcept
+    {
+        PlugCoreCtrl.Link(LINK_ID::Launcher::LAUNCHER_PROGRAM_DESTROY);
+    };
+    svParam.fnSignalCallBack = []() noexcept
+    {
+        // what ever you do with this callback, maybe reload the configuration
+#if defined(_WIN32) || defined(_WIN64)
+        OutputDebugString(L"Signal Callback\r\n");
+#else
+        syslog(LOG_NOTICE, "SignalCallBack called ");
+#endif
+    };
+
+    return ServiceMain(argc, argv, svParam);
 }
-
-// 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
-// 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
-
-// 시작을 위한 팁: 
-//   1. [솔루션 탐색기] 창을 사용하여 파일을 추가/관리합니다.
-//   2. [팀 탐색기] 창을 사용하여 소스 제어에 연결합니다.
-//   3. [출력] 창을 사용하여 빌드 출력 및 기타 메시지를 확인합니다.
-//   4. [오류 목록] 창을 사용하여 오류를 봅니다.
-//   5. [프로젝트] > [새 항목 추가]로 이동하여 새 코드 파일을 만들거나, [프로젝트] > [기존 항목 추가]로 이동하여 기존 코드 파일을 프로젝트에 추가합니다.
-//   6. 나중에 이 프로젝트를 다시 열려면 [파일] > [열기] > [프로젝트]로 이동하고 .sln 파일을 선택합니다.
