@@ -25,9 +25,9 @@
 
 constexpr const WCHAR* STR_SERVICE_DISPLAY_NAME = L"FlexiLauncher Service";
 constexpr const WCHAR* STR_SERVICE_DESCRIPTION  = L"FlexiLauncher Service";
-constexpr const WCHAR* STR_SERVICE_SERVICE_NAME = L"FlexiLauncherSrv";
+constexpr const WCHAR* STR_SERVICE_SERVICE_NAME = L"FlexiSvc";
 
-constexpr const WCHAR* STR_LAUNCHER_PIPE_NAME = L"FLEXI_LAUNCHER_PIPE";
+constexpr const WCHAR* STR_FLEXI_SERVICE_PIPE_NAME = L"FLEXI_SERVICE_PIPE";
 
 
 
@@ -62,14 +62,14 @@ int main(int argc, const char* argv[])
             strTmpPath = ".";
         m_strModulePath = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().from_bytes(strTmpPath) + L"/";
 #endif
-        PlugCoreCtrl.Link(LINK_ID::Launcher::LAUNCHER_PROGRAM_INIT);
+        PlugCoreCtrl.Link(LINK_ID::Service::SERVICE_PROGRAM_START_SERVICE);
 
         
 		new std::thread([]() 
             {
                 CPipeServer* pServer = nullptr;
                 Pipe_API::Create_Server(&pServer);
-                std::wstring strPipeName = STR_LAUNCHER_PIPE_NAME;
+                std::wstring strPipeName = STR_FLEXI_SERVICE_PIPE_NAME;
                 pServer->Create(strPipeName);
                 pServer->SetMessageReceivedCallback([&](const std::string& message) {
                     OutputDebugStringA(message.c_str());
@@ -82,7 +82,7 @@ int main(int argc, const char* argv[])
     };
     svParam.fnStopCallBack = []() noexcept
     {
-        PlugCoreCtrl.Link(LINK_ID::Launcher::LAUNCHER_PROGRAM_DESTROY);
+        PlugCoreCtrl.Link(LINK_ID::Service::SERVICE_PROGRAM_STOP_SERVICE);
     };
     svParam.fnSignalCallBack = []() noexcept
     {
