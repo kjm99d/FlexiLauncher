@@ -13,6 +13,7 @@
 #include <vector>
 #include <string>
 #include <thread>
+#include <memory>
 
 #include "IPCAPI.h"
 #if _WIN64

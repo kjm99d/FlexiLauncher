@@ -51,6 +51,9 @@
     <ClCompile Include="..\Common\PlugCoreCtrl.cpp">
       <Filter>공통 소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CApplication.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="..\Common\CommonLinkID.h">
       <Filter>공통 헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CApplication.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

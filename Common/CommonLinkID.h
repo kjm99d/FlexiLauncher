@@ -16,7 +16,7 @@ namespace LINK_ID
 	// 3000 ~ 
 	enum Updater {
 		UPDATER_PROGRAM_INIT	= 3000, // 업데이트 프로그램 시작 이벤트
-		UPDATER_PROGRAM_DESTORY	= 3000, // 업데이트 프로그램 종료 이벤트
+		UPDATER_PROGRAM_DESTORY	= 3001, // 업데이트 프로그램 종료 이벤트
 	};
 
 }
