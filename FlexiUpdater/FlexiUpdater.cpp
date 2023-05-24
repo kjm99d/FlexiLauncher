@@ -10,7 +10,7 @@
 int main()
 {
     PlugCoreCtrl.Link(LINK_ID::Updater::UPDATER_PROGRAM_INIT);
-    PlugCoreCtrl.Link(LINK_ID::Command::COMMAND_SHOW_LOGIN);
+    //PlugCoreCtrl.Link(LINK_ID::Command::COMMAND_SHOW_LOGIN);
 
 //    LoadLibraryA("Project11.dll");
 	

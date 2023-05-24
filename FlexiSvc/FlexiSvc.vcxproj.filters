@@ -71,11 +71,14 @@
     <ClInclude Include="..\Common\PlugCoreCtrl.h">
       <Filter>공통 헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="CApplication.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="..\Common\CommonLinkID.h">
       <Filter>공통 헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CApplication.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="..\Common\PipeProtocol.h">
+      <Filter>공통 헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
