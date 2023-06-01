@@ -6,6 +6,9 @@ CApplication::CApplication() : m_pServer(nullptr)
 {
     m_pPipeThread = nullptr;
     CreatePipeThread();
+
+
+    PlugCoreCtrl.Link(LINK_ID::Service::START_SERVICE_APPLICATION_INIT_FINISH_BEFORE);
 }
 
 CApplication::~CApplication()

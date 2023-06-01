@@ -3,8 +3,9 @@ namespace LINK_ID
 {
 	// 1000 ~
 	enum Service {
-		START_SERVICE	= 1000, // 서비스 시작 시 이벤트
-		STOP_SERVICE	= 1001, // 서비스 중지 시 이벤트
+		START_SERVICE									= 1000, // 서비스 시작 시 이벤트
+		START_SERVICE_APPLICATION_INIT_FINISH_BEFORE	= 1001, // 서비스 시작 후 Application 생성자 호출 끝나기 직전
+		STOP_SERVICE									= 1101, // 서비스 중지 시 이벤트
 	};
 
 	// 2000 ~
